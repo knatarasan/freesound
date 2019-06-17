@@ -1,33 +1,8 @@
 # Freesound
 
-* Step1:
-Download data files from following URL and store it under data/audio_train/
+  * This project is to solve a kaggle challenge ( https://www.kaggle.com/c/freesound-audio-tagging/ )  : Build a model which can learn  9000 audio files classified into 41. The model should predict when a new file from this 41 is supplied 
+  * Training set was in wav format sound files, suitable python packages are used to convert these into keras requisted format 
+  * Appropriate  metrics and suitable benchmark methods to measure each learning iteration and tuning the model to improve accuracy.
+  * An application which can understand and classify sound file could be implemented for various use cases.
 
-https://www.kaggle.com/c/freesound-audio-tagging/data
 
-
-* Step2:
-Set full path of the folder to variable home
-
-home='/Users/knnatarasan/workspace/ds/udacity/freesound/'
-
-* Step3:
-
-This project is tested on Python3 , make sure that follwoing packages are available 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import librosa,librosa.display,pyaudio,wave,time
-
-import os,shutil
-from scipy.io import wavfile
-import IPython.display as ipd
-
-from keras import losses,models,optimizers
-from keras.activations import relu,softmax
-from keras.callbacks import(EarlyStopping,LearningRateScheduler,ModelCheckpoint,
-                           TensorBoard,ReduceLROnPlateau)
-from keras.layers import (Convolution1D,Dense,Dropout,GlobalAveragePooling1D,
-                         GlobalMaxPool1D,Input,MaxPool1D,concatenate)
-from keras.utils import Sequence,to_categorical
-import ml_metrics as metrics
